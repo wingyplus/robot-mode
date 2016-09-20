@@ -19,7 +19,8 @@
   '("^[^\s].*$" . font-lock-function-name-face)
   (concat
     "Tokenizes test case and keyword name"
-    "FIXME: it does not tokenizes when Test Case have embeded variable"))
+    "FIXME: it does not tokenizes when Test Case have embeded variable."
+    "FIXME: it does not tokenizes when insert comment at the last sentence."))
 
 (defvar robot-mode-font-lock-keywords
   (list
