@@ -2,9 +2,13 @@
   '("^\\*\\{3\\}[ \t]+\\(Settings\\|Test Cases\\|Keywords\\|Variables\\)[ \t]+\\*\\{3\\}" . font-lock-keyword-face)
   "Header keywords")
 
+(defvar robot-mode-settings-keyword
+  '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face))
+
 (defvar robot-mode-font-lock-keywords
   (list
-    robot-mode-header-keywords)
+    robot-mode-header-keywords
+    robot-mode-settings-keyword)
   "All available keywords")
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
