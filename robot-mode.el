@@ -3,7 +3,8 @@
   "Header keywords")
 
 (defvar robot-mode-settings-keyword
-  '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face))
+  '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face)
+  "Test case settings keyword")
 
 (defvar robot-mode-font-lock-keywords
   (list
