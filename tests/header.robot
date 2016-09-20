@@ -4,5 +4,7 @@
 
 *** Keywords ***
 
+*** Variables ***
+
 *** No match header ***
 

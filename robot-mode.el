@@ -1,5 +1,5 @@
 (defvar robot-mode-header-keywords
-  '("^\\*\\{3\\}\s+\\(Settings\\|Test Cases\\|Keywords\\)\s+\\*\\{3\\}" . font-lock-keyword-face)
+  '("^\\*\\{3\\}[ \t]+\\(Settings\\|Test Cases\\|Keywords\\|Variables\\)[ \t]+\\*\\{3\\}" . font-lock-keyword-face)
   "Header keywords")
 
 (defvar robot-mode-font-lock-keywords
