@@ -8,17 +8,26 @@
 
 (defvar robot-mode-comment
   '("^[\s\ta-zA-Z0-9]*\\(#.*\\)$" . (1 font-lock-comment-face))
-  "Comment")
+  (concat
+    "Comment"
+    "FIXME: it does not tokenizes when Test Case have embeded variable"))
 
 (defvar robot-mode-variable
   '("[\\$&@]{.*}" . font-lock-variable-name-face))
+
+(defvar robot-mode-test-case-keywords-name
+  '("^[^\s].*$" . font-lock-function-name-face)
+  (concat
+    "Tokenizes test case and keyword name"
+    "FIXME: it does not tokenizes when Test Case have embeded variable"))
 
 (defvar robot-mode-font-lock-keywords
   (list
     robot-mode-header
     robot-mode-test-case-settings
     robot-mode-comment
-    robot-mode-variable)
+    robot-mode-variable
+    robot-mode-test-case-keywords-name)
   "All available keywords")
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
