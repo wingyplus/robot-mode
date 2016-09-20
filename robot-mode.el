@@ -10,11 +10,15 @@
   '("^[\s\ta-zA-Z0-9]*\\(#.*\\)$" . (1 font-lock-comment-face))
   "Comment")
 
+(defvar robot-mode-variable
+  '("[\\$&@]{.*}" . font-lock-variable-name-face))
+
 (defvar robot-mode-font-lock-keywords
   (list
     robot-mode-header-keywords
     robot-mode-settings-keyword
-    robot-mode-comment)
+    robot-mode-comment
+    robot-mode-variable)
   "All available keywords")
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
