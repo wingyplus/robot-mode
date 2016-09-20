@@ -32,6 +32,7 @@
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
   "A major mode for Robot Framework."
+  (setq-local comment-start "# ")
   (setq-local font-lock-defaults
     '(robot-mode-font-lock-keywords)))
 
