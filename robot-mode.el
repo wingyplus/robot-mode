@@ -6,10 +6,15 @@
   '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face)
   "Test case settings keyword")
 
+(defvar robot-mode-comment
+  '("^[\s\ta-zA-Z0-9]*\\(#.*\\)$" . (1 font-lock-comment-face))
+  "Comment")
+
 (defvar robot-mode-font-lock-keywords
   (list
     robot-mode-header-keywords
-    robot-mode-settings-keyword)
+    robot-mode-settings-keyword
+    robot-mode-comment)
   "All available keywords")
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
