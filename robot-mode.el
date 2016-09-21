@@ -1,3 +1,8 @@
+(defgroup robot-mode nil
+  "Robot Framework major mode"
+  :link '(url-link "https://github.com/wingyplus/robot-mode")
+  :group 'languages)
+
 (defconst robot-mode--header-keywords-re
   (regexp-opt '("Settings" "Test Cases" "Keywords" "Variables"))
   "Header keywords regexp")
