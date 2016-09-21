@@ -1,6 +1,24 @@
+(defconst robot-mode--header-keywords-re
+  (regexp-opt '("Settings" "Test Cases" "Keywords" "Variables"))
+  "Header keywords regexp")
+
+(defconst robot-mode-header-three-star-re "\\*\\{3\\}")
+
+(defconst robot-mode-whitespace-re "[ \t]+")
+
+(defconst robot-mode-header-re
+  (concat
+    "^"
+    robot-mode-header-three-star-re robot-mode-whitespace-re
+    robot-mode--header-keywords-re
+    robot-mode-whitespace-re robot-mode-header-three-star-re))
+
 (defvar robot-mode-header
-  '("^\\*\\{3\\}[ \t]+\\(Settings\\|Test Cases\\|Keywords\\|Variables\\)[ \t]+\\*\\{3\\}" . font-lock-keyword-face)
+  `(,robot-mode-header-re . font-lock-keyword-face)
   "Header keywords")
+
+;; (defvar robot-mode-settings-keywords
+;;   '("^\\(Library\\|Resource\\|Variables\\|Documentation\\|Metadata\\|Suite Setup\\|Suite Teardown\\|Force Tags\\|Default Tags\\|Test Setup\\|Test Teardown\\|Test Template\\|Test Timeout\\)" . font-lock-keyword-face))
 
 (defvar robot-mode-test-case-settings
   '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face)
