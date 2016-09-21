@@ -17,8 +17,17 @@
   `(,robot-mode-header-re . font-lock-keyword-face)
   "Header keywords")
 
-;; (defvar robot-mode-settings-keywords
-;;   '("^\\(Library\\|Resource\\|Variables\\|Documentation\\|Metadata\\|Suite Setup\\|Suite Teardown\\|Force Tags\\|Default Tags\\|Test Setup\\|Test Teardown\\|Test Template\\|Test Timeout\\)" . font-lock-keyword-face))
+(defconst robot-mode-settings-keywords-re
+  (concat
+    "^"
+    (regexp-opt '("Library" "Resource" "Variables"
+                   "Documentation" "Metadata" "Suite Setup"
+                   "Suite Teardown" "Force Tags" "Default Tags"
+                   "Test Setup" "Test Teardown" "Test Template"
+                   "Test Timeout"))))
+
+(defvar robot-mode-settings-keywords
+  `(,robot-mode-settings-keywords-re . font-lock-keyword-face))
 
 (defconst robot-mode-test-case-settings-keywords-re
   (regexp-opt '("Documentation" "Tags" "Setup"
@@ -41,20 +50,13 @@
 (defvar robot-mode-variable
   '("[\\$&@]{.*}" . font-lock-variable-name-face))
 
-(defvar robot-mode-test-case-keywords-name
-  '("^[^\s].*$" . font-lock-function-name-face)
-  (concat
-    "Tokenizes test case and keyword name"
-    "FIXME: it does not tokenizes when Test Case have embeded variable."
-    "FIXME: it does not tokenizes when insert comment at the last sentence."))
-
 (defvar robot-mode-font-lock-keywords
   (list
     robot-mode-header
+    robot-mode-settings-keywords
     robot-mode-test-case-settings
     robot-mode-comment
-    robot-mode-variable
-    robot-mode-test-case-keywords-name)
+    robot-mode-variable)
   "All available keywords")
 
 (define-derived-mode robot-mode fundamental-mode "Robot Framework"
