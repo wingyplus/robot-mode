@@ -53,7 +53,7 @@
     "FIXME: it does not tokenizes when Test Case have embeded variable"))
 
 (defvar robot-mode-variable
-  '("[\\$&@]{.*}" . font-lock-variable-name-face))
+  '("[\\$&@]{.*?}" . font-lock-variable-name-face))
 
 (defvar robot-mode-font-lock-keywords
   (list
