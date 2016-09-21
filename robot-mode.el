@@ -20,8 +20,16 @@
 ;; (defvar robot-mode-settings-keywords
 ;;   '("^\\(Library\\|Resource\\|Variables\\|Documentation\\|Metadata\\|Suite Setup\\|Suite Teardown\\|Force Tags\\|Default Tags\\|Test Setup\\|Test Teardown\\|Test Template\\|Test Timeout\\)" . font-lock-keyword-face))
 
+(defconst robot-mode-test-case-settings-keywords-re
+  (regexp-opt '("Documentation" "Tags" "Setup"
+                 "Teardown" "Template" "Timeout"))
+  "Test case settings keywords regexp")
+
+(defconst robot-mode-test-case-settings-re
+  (concat "\\[" robot-mode-test-case-settings-keywords-re "\\]"))
+
 (defvar robot-mode-test-case-settings
-  '("\\[\\(Documentation\\|Tags\\|Setup\\|Teardown\\|Template\\|Timeout\\)\\]" . font-lock-keyword-face)
+  `(,robot-mode-test-case-settings-re . font-lock-keyword-face)
   "Test case settings keyword")
 
 (defvar robot-mode-comment
