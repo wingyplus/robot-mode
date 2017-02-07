@@ -35,8 +35,8 @@
   `(,robot-mode-settings-keywords-re . font-lock-keyword-face))
 
 (defconst robot-mode-test-case-settings-keywords-re
-  (regexp-opt '("Documentation" "Tags" "Setup"
-                 "Teardown" "Template" "Timeout"))
+  (regexp-opt '("Arguments" "Documentation" "Tags" "Setup"
+		"Teardown" "Template" "Timeout" "Return"))
   "Test case settings keywords regexp")
 
 (defconst robot-mode-test-case-settings-re
